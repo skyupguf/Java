@@ -47,6 +47,8 @@ public class Operator {
         System.out.println("== 논리 연산자 ==");
         System.out.println((numA > numB) && (numA == numB));
         System.out.println((numA > numB) || (numA == numB));
+        System.out.println((numA > numB) ^ (numA == numB));
+        System.out.println(!(numA > numB));
 
 //      5. 복합 대입 연산자
         System.out.println("== 복합 대입 연산자 ==");
