@@ -1,25 +1,5 @@
 /**
-//  Index  //
-
-    1. 문제요약
-    2. 접근방법
-    3. 코드
-
-
-//  1. 문제요약  //
-
-    입력 받은 문자열에서 from 에 해당하는 문자를 to 로 String 메서드를 사용하지 않고 변경해서 반환하라.
-
-    1-1. replace, indexOf, contains 을 사용하지 않고 구현해야 한다.
-
-    1-2. 입출력
-        입력 : "Hello Java, Nice to meet you! Java is fun!"
-            from : "Java"
-            to : "자바"
-        출력 : "Hello 자바, Nice to meet you! 자바 is fun!"
-
-
-//  2. 접근방법  //
+//  접근방법  //
 
     A. from 이 말이 되는 문자든 아니든 해당 문자가 to 로 대체되어야 한다.
         A-1. 새로운 문자열을 할당할 result 를 선언하고 ""로 초기화 한다.
@@ -30,7 +10,6 @@
         A-6. 문자가 다르면 temp 의 가장 앞 문자만 result 에 누적하고 temp의 가장 앞 문자만 제거한다.
         A-7. for 문이 종료되면 temp 에 남아있는 문자를 result 에 누적하고 반환한다.
  */
-//  3. 코드   //
 public class Practice3 {
     public static String solution(char[] str, char[] find, char[] to) {
 
