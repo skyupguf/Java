@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
 //  Index  //
 
@@ -31,6 +29,7 @@ import java.util.Scanner;
 
  */
 //  3. 코드   //
+import java.util.Scanner;
 public class Practice2 {
     public static void solution() {
 
