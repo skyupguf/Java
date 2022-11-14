@@ -1,12 +1,35 @@
-/*
-* 로직작성
-*   당첨번호를 제외하고 모든 회 수와 상관없이 로또번호는 중복이 되어선 안된다.
-*   생성하는 로또의 번호를 해쉬셋으로 중복생성되지 않도록 난수로 생성한다.
-*   모든 로또번호를 생성하고 해쉬셋을 루프하면서  
-*   
-* */
 
 import java.util.*;
+class Lotto {
+    public ArrayList<Integer> AddLotto() {
+
+        Random ran = new Random();
+
+        HashSet<Integer> numbers = new HashSet<>();
+        while (numbers.size() < 6) {
+            numbers.add(ran.nextInt(45)+1);
+        }
+
+        ArrayList<Integer> lottoNum = new ArrayList<>(numbers);
+        Collections.sort(lottoNum);
+        return lottoNum;
+    }
+
+    public void PrintLotto(ArrayList<Integer> nums, int i) {
+
+        String printLotto = "";
+        char index = i >= 0 ? (char)(65 + i) : ' ';
+
+        for (Integer num : nums) {
+            if (num < 10) printLotto += ("0" + num + ",");
+            else printLotto += (num + ",");
+        }
+
+        printLotto = printLotto.substring(0 , printLotto.length() - 1);
+        System.out.printf("%s\t%s", index, printLotto);
+    }
+}
+
 
 public class Exam7 {
     public static void main(String[] args) {
@@ -16,23 +39,38 @@ public class Exam7 {
         Scanner sc = new Scanner(System.in);
         System.out.print("로또 개수를 입력해 주세요.(숫자 1 ~ 10):");
 
-        int count = Math.min(sc.nextInt(), 10) * 6;
-        Random ran = new Random();
+        int count = Math.min(sc.nextInt(), 10);
+        Lotto generateLotto = new Lotto();
 
-        HashSet<Integer> numbers = new HashSet<Integer>();
-        while (numbers.size() <= count) {
-            numbers.add(ran.nextInt(45)+1);
+        ArrayList<Integer>[] lottos = new ArrayList[count];
+        for (int i=0; i<count; i++) {
+
+            ArrayList<Integer> lottoNum = new ArrayList<>(generateLotto.AddLotto());
+            generateLotto.PrintLotto(lottoNum, i);
+            System.out.println();
+
+            lottos[i] = new ArrayList<>(lottoNum);
         }
 
-//        char index = 'A';
-//        HashMap<Character, Object> map = new HashMap<>();
-//        for (int number : numbers) {
-//            if
-//        }
+        System.out.println();
+        System.out.println("[로또 발표]");
 
+        ArrayList<Integer> prize = new ArrayList<>(generateLotto.AddLotto());
+        generateLotto.PrintLotto(prize, -1);
 
-//        해당 키의 배열을 루프하면서 로또번호와 비교해 존재하는 경우 confirm을 1씩 누적한다.
+        System.out.println();
+        System.out.println();
+        System.out.println("[내 로또 결과]");
 
-        
+        for (int i=0; i<lottos.length; i++) {
+            int check = 0;
+
+            for (int j=0; j<prize.size(); j++) {
+                if (lottos[i].get(j) == prize.get(j)) check++;
+            }
+            generateLotto.PrintLotto(lottos[i], i);
+            System.out.printf(" => %d개 일치\n", check);
+        }
     }
+
 }
