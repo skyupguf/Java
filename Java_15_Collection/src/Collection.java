@@ -8,10 +8,11 @@ public class Collection {
 
 //      1. List
 //        1-1. ArrayList
-        ArrayList list1 = new ArrayList();
+        ArrayList<Integer> list1 = new ArrayList<>();
         list1.add(1);
         list1.add(2);
         list1.add(3);
+
         System.out.println("list1 = " + list1);
         list1.remove(Integer.valueOf(2));
         System.out.println("list1 = " + list1);
