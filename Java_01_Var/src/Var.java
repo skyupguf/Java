@@ -3,11 +3,6 @@
 public class Var {
     public static void main(String[] args) {
 
-        System.out.println("1" == "1");
-
-        String[] arr = (123+"").split("");
-        System.out.println(arr.length);
-
 //      1. 변수 사용하기
         System.out.println("== 변수 사용하기 ==");
 
