@@ -13,7 +13,7 @@ public class Test {
 
         System.out.println("=====================");
 
-//      B-3. 두 객체는 메서드가 상속되지 않았으므로 다른 결과값을 출력한다.
+//      B-4. 두 객체는 메서드가 상속되지 않았으므로 다른 결과값을 출력한다.
         Vehicle vehicle1 = new Vehicle();
         vehicle1.topSpeed = 100;
         vehicle1.size = 2;
@@ -27,12 +27,15 @@ public class Test {
         car1.displacement = 50;
         car1.inform();
 
-//      B-4. 메서드를 상속하여 새로 정의한 Car2는 하위 클래스에서 입력한 값을 정상적으로 출력한다.
+//      B-5. 메서드를 상속하여 새로 정의한 Car2는 하위 클래스에서 입력한 값을 정상적으로 출력한다.
         Car2 car2 = new Car2();
         car2.name = "차량";
         car2.topSpeed = 110;
         car2.size = 4;
         car2.displacement = 50;
         car2.inform();
+
+//      B-8.
+        Car2 car3 = new Car2(200, 4, "SUV", 2000);
     }
 }
