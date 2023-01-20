@@ -36,11 +36,11 @@ class Car2 extends Vehicle {
     public int displacement;
 
 //  B-6. 상속받은 클래스는 기본 생성자와 마찬가지로 설정하지 않으면 자바 컴파일러가 default 를 제공한다.
-//    public Car2() {
-//        super();
-//        System.out.println("Car2의 생성자");
-////        super();  상위 클래스 생성자는 최상단에 위치해야 한다.
-//    }
+    public Car2() {
+        super();
+        System.out.println("Car2의 생성자");
+//        super();  상위 클래스 생성자는 최상단에 위치해야 한다.
+    }
 
 //  B-7. super 로 상위 클래스 생성자를 사용하기 위해선 상위 클래스에서 정의된 생성자가 존재해야 한다.
 //  topSpeed 와 size 인자를 사용한 생성자가 Vehicle 에 정의되어 있어야 한다.
